@@ -18,11 +18,12 @@ npm:
 安装sass的依赖包
 
 npm install --save-dev sass-loader
-//sass-loader依赖于node-sass
+
+//<font color=red>sass-loader</font>依赖于<font color=red>node-sass</font>
 npm install --save-dev node-sass
 ***
 
-提取css到外部link，而非style标签，需要用 extract-text-webpack-plugin 插件
+提取css到外部link，而非style标签，需要用 <font color=red>extract-text-webpack-plugin</font> 插件
 ```
 {
     test: /\.(scss|sass|css)$/,
