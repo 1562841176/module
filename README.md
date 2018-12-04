@@ -10,3 +10,10 @@ npm:
 + "presets": ["@babel/preset-env"]
 
 另，stage-*已弃用
+
+
+安装sass的依赖包
+
+npm install --save-dev sass-loader
+//sass-loader依赖于node-sass
+npm install --save-dev node-sass
