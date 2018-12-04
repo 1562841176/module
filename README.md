@@ -19,7 +19,7 @@ npm:
 
 npm install --save-dev sass-loader
 
-//<font color=red>sass-loader</font>依赖于<font color=red>node-sass</font>
+<font color=red>sass-loader</font>依赖于<font color=red>node-sass</font><br/>
 npm install --save-dev node-sass
 ***
 
