@@ -22,7 +22,13 @@ var webpackConfig = {
             test: /\.js$/,
             // 不编译 node_modules 下的文件
             exclude: /node_modules/,
-            loader: "babel-loader"
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-react' ,'@babel/preset-env']
+                }
+            }
+
         },{
             // 处理css文件
             test: /\.(scss|sass|css)$/,
@@ -37,7 +43,18 @@ var webpackConfig = {
                         importLoaders: 2
                     }
                 },
-                'postcss-loader',
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        plugins:function(){
+                            return [
+                                require('autoprefixer')({
+                                    browsers: ["last 5 versions"]
+                                })
+                            ];
+                        }
+                    }
+                },
                 'sass-loader'
             ]
         }, {
