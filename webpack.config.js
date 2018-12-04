@@ -34,29 +34,53 @@ var webpackConfig = {
             test: /\.(scss|sass|css)$/,
             // loader: "css-loader?importLoaders=1!postcss-loader!sass-loader",
             // loader执行顺序是从右到左：sass-loader -> postcss-loader -> css-loader
-            use: [
-                "style-loader",
-                {
-                    loader: "css-loader",
-                    options: {
-                        // // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
-                        importLoaders: 2
-                    }
-                },
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins:function(){
-                            return [
-                                require('autoprefixer')({
-                                    browsers: ["last 5 versions"]
-                                })
-                            ];
+            use: ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: [{
+                        loader: "css-loader",
+                        options: {
+                            // // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
+                            importLoaders: 2
                         }
-                    }
-                },
-                'sass-loader'
-            ]
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins:function(){
+                                return [
+                                    require('autoprefixer')({
+                                        browsers: ["last 5 versions"]
+                                    })
+                                ];
+                            }
+                        }
+                    },
+                    'sass-loader'
+                ]
+            })
+            // use: [
+            //     "style-loader",
+            //     {
+            //         loader: "css-loader",
+            //         options: {
+            //             // // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
+            //             importLoaders: 2
+            //         }
+            //     },
+            //     {
+            //         loader: 'postcss-loader',
+            //         options: {
+            //             plugins:function(){
+            //                 return [
+            //                     require('autoprefixer')({
+            //                         browsers: ["last 5 versions"]
+            //                     })
+            //                 ];
+            //             }
+            //         }
+            //     },
+            //     'sass-loader'
+            // ]
         }, {
             // 处理html文件，并处理img 中 src 和 data-src 的引入路径
             test: /\.html$/,
