@@ -4,6 +4,8 @@ var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var CleanWebpackPlugin = require('clean-webpack-plugin'); //将打包的js文件的hash值去掉，这样就会新的打包js文件，将旧的覆盖。
+
 var webpackConfig = {
     // 设置入口文件。
     entry: './src/js/index.js',
@@ -16,6 +18,14 @@ var webpackConfig = {
         // [name] 为chunk中的名称
         // [hash] 为webpack生成的哈希值
         filename: "js/[name].[hash].bundle.js"
+    },
+    resolve: {
+        alias: {
+            scss: path.resolve(__dirname, 'src/scss'),
+            js: path.resolve(__dirname, 'src/js'),
+            view: path.resolve(__dirname, 'src/view'),
+            assets: path.resolve(__dirname, 'src/assets')
+        }
     },
     module: {
         rules: [{
@@ -114,6 +124,10 @@ var webpackConfig = {
     //       },      
     // },
     plugins: [
+        // 每次打包前都清空dist文件
+        new CleanWebpackPlugin(['dist'], {
+            root: path.resolve(__dirname, '../')
+        }),
          // 提取公共css样式
          new ExtractTextPlugin('./css/[name].css'),
         // 公共js提取   webpack4.0开始摒弃了CommonsChunkPlugin，要把webpack.config.js里的new webpack.optimize.CommonsChunkPlugin修改为splitChunks
