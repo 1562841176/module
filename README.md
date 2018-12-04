@@ -1,5 +1,7 @@
 # module
 
+webpack 版本号4.0.0以上
+
 将 babel-preset-* 卸载，重新安装 @babel/preset-* ，并且修改 .babelrc 中的 presets
 npm:
 - babel-preset-env
