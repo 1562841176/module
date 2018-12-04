@@ -19,3 +19,22 @@ npm:
 npm install --save-dev sass-loader
 //sass-loader依赖于node-sass
 npm install --save-dev node-sass
+
+
+提取css到外部link，而非style标签，需要用 extract-text-webpack-plugin 插件
+{
+    test: /\.(scss|sass|css)$/,
+    use: ExtractTextPlugin.extract({
+        fallback: "style-loader",
+        use: [{
+                loader: "css-loader",
+                options: {
+                    // // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
+                    importLoaders: 2
+                }
+            },
+            'postcss-loader',
+            'sass-loader'
+        ]
+    })
+}
