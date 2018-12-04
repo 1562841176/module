@@ -1,4 +1,4 @@
-# module
+# webpack-demo
 
 webpack 版本号4.0.0以上
 ====
