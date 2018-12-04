@@ -23,6 +23,7 @@ npm install --save-dev node-sass
 ***
 
 提取css到外部link，而非style标签，需要用 extract-text-webpack-plugin 插件
+```
 `<{
     test: /\.(scss|sass|css)$/,
     use: ExtractTextPlugin.extract({
@@ -39,6 +40,7 @@ npm install --save-dev node-sass
         ]
     })
 }>`
+```
 ***
 
 
