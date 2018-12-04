@@ -13,7 +13,7 @@ npm:
 + "presets": ["@babel/preset-env"]
 
 另，stage-*已弃用
-***
+*
 
 安装sass的依赖包
 
@@ -21,7 +21,7 @@ npm install --save-dev sass-loader
 
 <font color=red>sass-loader</font>依赖于<font color=red>node-sass</font><br/>
 npm install --save-dev node-sass
-***
+*
 
 提取css到外部link，而非style标签，需要用 <font color=red>extract-text-webpack-plugin</font> 插件
 ```
@@ -42,7 +42,7 @@ npm install --save-dev node-sass
     })
 }
 ```
-***
+*
 
 
 在编写js时，因为有可能js文件是在很多级的目录当中，如果每次都使用 .. 来定位上一层目录的话，那么这个定位就会十分繁琐。这时可以使用 webpack 提供的 resolve.alias 配置来使引入文件的时候变得更加方便简单。
