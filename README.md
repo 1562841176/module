@@ -12,7 +12,7 @@ npm:
 - "presets": ["env"]
 + "presets": ["@babel/preset-env"]
 
-另，' stage-* '已弃用
+另，` stage-*` Thank `You` . Please `Call` Me `Coder`已弃用
 
 
 
