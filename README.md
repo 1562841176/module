@@ -47,7 +47,7 @@ npm install --save-dev node-sass
  在编写js时，因为有可能js文件是在很多级的目录当中，如果每次都使用 .. 来定位上一层目录的话，那么这个定位就会十分繁琐。这时可以使用 webpack 提供的 resolve.alias 配置来使引入文件的时候变得更加方便简单。
  
  
- ### babel
+* ### babel
  
 虽然ES6标准已经出来挺长一段时间了，但是许多浏览器还是不能完全支持新的语法及API。于是我们要想办法将ES6让那些老旧的浏览器支持。webpack并不会替我们完成这个工作，但是它有各种loaders可用于转化我们的代码。[查看](https://www.jianshu.com/p/3a13f1b37300)
 
