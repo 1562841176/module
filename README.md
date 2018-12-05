@@ -3,13 +3,13 @@
 
 ## webpack 版本号4.0.0以上
 
-* ###development模式
+* ### development模式
 ```
 1. 浏览器调试工具
 2. 开发阶段的详细错误日志和提示
 3.快速和优化的增量构建机制
  ````
-* ###production模式
+* ### production模式
 ```
   1.开启所有的优化代码
   2.更小的bundle大小
