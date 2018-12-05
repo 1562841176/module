@@ -13,7 +13,8 @@ npm:
 + "presets": ["@babel/preset-env"]
 
 另，stage-*已弃用
-*
+
+-
 
 安装sass的依赖包
 
