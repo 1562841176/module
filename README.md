@@ -3,6 +3,17 @@
 
 ## webpack 版本号4.0.0以上
 
+* ###development模式
+  浏览器调试工具
+  开发阶段的详细错误日志和提示
+  快速和优化的增量构建机制
+* ###production模式
+  开启所有的优化代码
+  更小的bundle大小
+  去除掉只在开发阶段运行的代码
+  Scope hoisting和Tree-shaking
+  自动启用uglifyjs对代码进行压缩
+
 * ### SplitChunksPlugin代替CommonsChunkPlugin
 ```
 module.exports = {
