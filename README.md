@@ -16,7 +16,7 @@ npm:
 ```
 另，` stage-*` 已弃用
 
-安装sass的依赖包
+* ### 安装sass的依赖包
 
 npm install --save-dev sass-loader
 
