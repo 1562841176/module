@@ -56,6 +56,8 @@ module.exports = {
   }
 }
 ```
+* ### babel-preset-*
+
 将 babel-preset-* 卸载，重新安装 @babel/preset-* ，并且修改 .babelrc 中的 presets
 ```
 npm:
