@@ -373,7 +373,8 @@ localhost:8080/index.html
 --compress 开启gzip压缩
 --progress 显示打包的进度
 ```
-
+* ### proxyTable
+利用`http-proxy-middleware`这个插件完成的
 
 
 
