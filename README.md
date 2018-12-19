@@ -56,6 +56,23 @@ module.exports = {
   }
 }
 ```
+* ### babel
+
+babel编译时只转换语法，几乎可以编译所有时新的javascript语法，但不会转化BOM里面不兼容的API。比如Promise、Set、Symbol、Array.from、async等一些API，这是时候就需要polyfill来转化这些API
+
+babel 转译语法需要一些plugin，如react,es2015,stage-0,stage-1等等
+
+一种语法从提案到变成正式标准，需要经历5个阶段
+Stage 0 - Strawman（展示阶段）囊括了1,2,3的所有插件，另外再添加了`transform-do-expressions ` 和 `transform-function-bind`2个插件   
+Stage 1 - Proposal（征求意见阶段）则是囊括了 2 和 3 插件，另外增加了
+`transform-class-constructor-call (Deprecated)` `transform-export-extensions`     
+Stage 2 - Draft（草案阶段）  拥有 3 的插件,还有`syntax-dynamic-import` `transform-class-properties`  
+Stage 3 - Candidate（候选人阶段）  
+Stage 4 - Finished（定案阶段）  
+
+一个提案只要能进入stage 2 ，就差不多肯定会包含在以后的正式标准里面
+
+
 * ### babel-preset-*
 
 将 babel-preset-* 卸载，重新安装 @babel/preset-* ，并且修改 .babelrc 中的 presets
